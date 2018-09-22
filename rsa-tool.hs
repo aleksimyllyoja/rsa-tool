@@ -87,7 +87,7 @@ fromGroups [] = []
 fromGroups ns = map read (join (map (\n->cut 2 (show n)) ns)) :: [Integer]
 
 coprimes :: Integer -> [Integer]
-coprimes p = [x|x<-[2..], gcd p x == 1]
+coprimes p = [x | x<-[2..], gcd p x == 1]
 
 isPrime :: Integer -> Bool
 isPrime n = n > 1 && n == head (primeFactors n)
@@ -150,7 +150,7 @@ readInteger = \s->(read s)::Integer
 
 readInt = \s->(read s)::Int
 
-addFlag flag conf = conf { flags = flag:(flags conf) }	
+addFlag flag conf = conf { flags = flag:(flags conf) }
 
 defaultConf = Configuration [] Nothing Nothing 3 (1000,500000) ""
 
